@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" stylesheets="@darkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open..." />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSaveAs" text="Save as..." />
+                        <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Close" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Actions">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleAdd" text="Add...">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                    <MenuItem mnemonicParsing="false" onAction="#handleEdit" text="Edit..." />
+                        <MenuItem mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAdd" styleClass="addbtn" stylesheets="@../mainpack/application.css">
+                     <effect>
+                        <DropShadow />
+                     </effect></Button>
+                  <Button contentDisplay="CENTER" layoutX="54.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleEdit" styleClass="edibtn" stylesheets="@../mainpack/application.css">
+                     <effect>
+                        <DropShadow />
+                     </effect></Button>
+                  <Button contentDisplay="CENTER" layoutX="98.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleDelete" styleClass="deletebtn" stylesheets="@../mainpack/application.css">
+                     <effect>
+                        <DropShadow />
+                     </effect></Button>
+              </items>
+            </ToolBar>
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+      </VBox>
+   </top>
+    <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+         <content>
+            <TableView fx:id="companyTable" fixedCellSize="0.0" prefHeight="237.0" prefWidth="416.0">
+              <columns>
+                <TableColumn fx:id="AutoCompanyNameColumn" prefWidth="201.0" text="Company Name" />
+                <TableColumn fx:id="TariffColumn" maxWidth="2500.0" minWidth="0.0" prefWidth="119.0" text="Tariff" />
+                  <TableColumn fx:id="ElectricityColumn" maxWidth="4000.0" minWidth="0.0" prefWidth="97.0" text="Electricity" />
+               
+             <TableColumn fx:id="averageColumn" maxWidth="4000.0" prefWidth="75.0" text="To payment" /> 
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <GridPane alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="217.0" minWidth="10.0" prefWidth="217.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="107.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="276.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Group Value Electricity " textAlignment="CENTER" textOverrun="CLIP" GridPane.columnSpan="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="groupValue1Field" editable="false" prefHeight="25.0" prefWidth="189.0" GridPane.columnIndex="1">
+               <effect>
+                  <DropShadow />
+               </effect></TextField>
+            <Label layoutX="10.0" layoutY="17.0" text="Group Value to payment" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="groupValue2Field" editable="false" layoutX="210.0" layoutY="13.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <effect>
+                  <DropShadow />
+               </effect></TextField>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>              
+      </GridPane>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,23 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.pane{
+    -fx-border-color: black;
+    -fx-border-radius:10;
+    -fx-border-width: 2          
+}
+
+
+.openbtn {          
+    -fx-graphic: url(../Icons/open-icon.png);   
+}
+
+.addbtn {          
+    -fx-graphic: url(../Icons/add-icon.png);   
+}
+
+.edibtn {          
+    -fx-graphic: url(../Icons/edit-icon.png);   
+}
+
+.deletebtn {          
+    -fx-graphic: url(../Icons/delete-icon.png);   
+}
